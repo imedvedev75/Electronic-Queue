@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "789648997051",
+    "firebase_url": "https://ameq-55d17.firebaseio.com",
+    "project_id": "ameq-55d17",
+    "storage_bucket": "ameq-55d17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789648997051:android:04c4ed98c37204bc",
+        "android_client_info": {
+          "package_name": "io.am.eq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789648997051-9vvhkuqso19htcq3oktbsjbqnkupqfi5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSlUBsnPPy1Kp5SrRD5K0zGjEBW9t-Rn4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

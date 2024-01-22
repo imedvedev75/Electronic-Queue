@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>     
+    <ion-title>{{queue.name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="refresh()">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>      
+  </ion-toolbar>
+</ion-header>
+
+    <!--<qrcode [qrdata]="myAngularxQrCode" [size]="256" [level]="'M'"></qrcode>-->
+
+<ion-content>
+    <ion-grid>
+      <ion-row align-items-center class="page-name">
+          <ion-col >
+            <ion-label>Your number:</ion-label>
+          </ion-col>
+          <ion-col size="auto">
+              <div class="round_corner your_num">{{num}}</div>
+          </ion-col>
+      </ion-row>   
+      <ion-row align-items-center>
+          <ion-col >
+            <ion-label>Current number: </ion-label>
+          </ion-col>
+          <ion-col size="auto">
+              <div class="round_corner curr_num">{{curr_num}}</div>
+          </ion-col>
+      </ion-row>         
+      <!--
+      <ion-row align-items-center>
+        <ion-col size="6">
+          <ion-label>Status: </ion-label>
+        </ion-col>
+        <ion-col>
+          <div class="round_corner">{{status_str}}</div>
+        </ion-col>
+      </ion-row>
+      -->
+      <ion-row align-items-center>
+            <ion-col >
+              <ion-button (click)="join()"  size="large" expand="block" [disabled]="in_queue">Join Queue</ion-button>
+            </ion-col>
+      </ion-row>
+
+      <ion-row align-items-center>
+          <ion-col >
+            <a href="{{geolocLink}}" target="_blank" clear>
+                <!--<ion-icon name="pin"></ion-icon>-->
+                Show on Map
+            </a>  
+          </ion-col>
+          <ion-col>
+            <ion-label >Distance (km):</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-input readonly="true" value="{{distance}}" style="text-align: center"></ion-input>
+          </ion-col>
+      </ion-row>         
+    
+    </ion-grid>
+  
+</ion-content>
+
+<ion-footer class="ion-text-center">
+  <ion-button (click)="leave()" expand="block" [disabled]="!in_queue">Leave Queue</ion-button>
+  <h4>Want to have your own electronic queues? <br> Visit <a href="http://www.a-i-m.tech/eq">this service</a> now!</h4>
+</ion-footer>

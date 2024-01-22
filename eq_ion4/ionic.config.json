@@ -1,0 +1,7 @@
+{
+  "name": "eq_ion4",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

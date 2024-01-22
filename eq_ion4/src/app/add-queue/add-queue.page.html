@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button (click)="close()"><ion-icon name="close"></ion-icon></ion-button>
+      </ion-buttons>
+      <ion-title>
+        Add new queue
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <div class="inner-content">
+    <form #addQueueForm="ngForm" (ngSubmit)="addQueue()" autocomplete="off">
+        <ion-grid>
+          <ion-row align-items-stretch> 
+            <ion-col>
+              <ion-label position="stacked">Queue name:</ion-label>
+              <ion-input placeholder="queueName" name="queueName" type="text" required="true" autofocus="true"
+              [(ngModel)]="queueNameText" #queueName="ngModel" #queueNameField></ion-input>
+            </ion-col>
+          </ion-row>
+            <ion-row align-items-stretch>  
+              <ion-col>
+                  <ion-label position="stacked">Latitude</ion-label>
+                  <ion-input placeholder="latitude" name="latitude" type="text" 
+                  [(ngModel)]="latitudeText" #latitude="ngModel" #latitudeField></ion-input>
+              </ion-col>
+              <ion-col>
+                  <ion-label position="stacked">Longitude</ion-label>
+                  <ion-input placeholder="longitude" name="longitude" type="text" 
+                  [(ngModel)]="longitudeText" #latitude="ngModel" #longitudeField></ion-input>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+      <ion-button class="submit-btn"  type="submit" [disabled]="!addQueueForm.form.valid">Add queue</ion-button>
+    </form>
+  </div>
+  
+  <ion-footer>
+      <ion-title>{{footer}}</ion-title>
+  </ion-footer>

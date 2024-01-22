@@ -1,0 +1,81 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+
+.page-name {
+    font-size: 2em;
+    //border-bottom: 1px solid #F1F1F1;
+}
+
+.col{
+    border-bottom: 2px solid #F0F0F0;
+}
+
+.bottom_border {
+    border-bottom: 2px solid #F0F0F0;
+}
+
+.my-custom-modal-css .modal-wrapper {
+    width: 80%;
+    height: 80%;
+    position: absolute; 
+    display: block;  
+  }
+
+  ion-modal.auto-height {
+    &.bottom {
+        align-items: flex-end;
+    }
+
+    --height: auto;
+
+    .ion-page {
+        position: relative;
+        display: block;
+        contain: content;
+
+        .inner-content {
+            max-height: 80vh;
+            overflow: auto;
+            padding: 10px;
+        }
+    }
+}
+
+.your_num {
+    font-size: 2rem;
+    min-height: 4rem;
+    min-width: 5rem;
+}
+
+.curr_num {
+    font-size: 1.5em;
+    min-height: 3rem;
+    min-width: 5rem;
+}
+
+.round_corner {
+    border-radius: 25px;
+    background: transparent;
+    border-color: var(--col-bk-main);
+    border-style: solid;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex!important;
+    align-content: center!important;
+    align-items: center!important;
+    text-align: center!important;
+    justify-content: center;
+}

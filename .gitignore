@@ -1,0 +1,11 @@
+.idea/
+__pycache__/
+eq_ion4/node_modules
+eq_ion4/.sourcemaps
+eq_ion4/plugins
+eq_ion4/resources
+eq_ion4/www
+eq_ion4/platforms
+eq_ion4/e2e
+
+

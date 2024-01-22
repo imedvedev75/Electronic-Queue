@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!--<ion-button (click)="join()" expand="block">Join Queue</ion-button>-->
+    <div text-center><h1>Welcome to the cloud-based electronic queue service!</h1></div>
+    <div text-center><h4>With this service you can create and manage your own electronic queues to serve your clients in a matter of few clicks.</h4></div>
+    <div text-center><h4>Just</h4></div> 
+    <div text-center><ion-button size="large" (click)="start()">Start</ion-button></div> 
+    
+</ion-content>

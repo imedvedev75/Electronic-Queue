@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--<ion-content padding>-->
+<div class="inner-content">
+  <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+    <ion-list >
+      <ion-item>
+        <ion-label position="stacked">Email:</ion-label>
+        <ion-input placeholder="email" name="emailField" id="emailField" type="text" required="true" 
+        [(ngModel)]="emailText" #email="ngModel" #emailField></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password:</ion-label>
+        <ion-input placeholder="password" name="passwordField" id="passwordField" type="password" required="true" 
+        [(ngModel)]="passwordText" #password="ngModel" #passwordField></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button class="submit-btn"  type="submit" [disabled]="!loginForm.form.valid">Login</ion-button>
+    <ion-button (click)="register()" >Register</ion-button>
+  </form>
+</div>
+<!--</ion-content>-->
+
+<ion-footer>
+    <ion-title>{{footer}}</ion-title>
+</ion-footer>

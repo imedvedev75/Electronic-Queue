@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>{{queue.name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="refresh()">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>Queue processing</ion-card-title>
+        </ion-card-header>     
+        <ion-card-content>
+          <ion-grid>
+              <ion-row align-items-center>
+                <ion-col size="6">
+                  <ion-label>Numbers in queue: </ion-label>
+                </ion-col>
+                <ion-col size="auto">
+                    <div class="round_corner curr_num">{{count_num}}</div>
+                </ion-col >
+              </ion-row>
+              <ion-row align-items-center>
+                <ion-col size="6">
+                  <ion-label>Currently processing: </ion-label>
+                </ion-col>
+                <ion-col size="auto">
+                    <div class="round_corner curr_num">{{curr_num}}</div>
+                </ion-col>
+              </ion-row>
+              <ion-row class="ionrow">
+                <ion-col size="6">
+                  <ion-button (click)="process()" expand="block" >Process</ion-button>
+                </ion-col>
+                <ion-col>
+                  <ion-button (click)="reset()" expand="block" >Reset</ion-button>
+                </ion-col>
+              </ion-row>              
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+  
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Queue data</ion-card-title>
+      </ion-card-header>        
+      <ion-card-content>
+          <ion-grid>
+            <ion-row align-items-center>
+              <ion-col size="12">
+                  <ion-label position="stacked">Queue name:</ion-label>
+                  <ion-textarea text-wrap placeholder="queue name" type="text"
+                  [(ngModel)]="queue.name" #queueName="ngModel" #queueNameField></ion-textarea>       
+              </ion-col>
+            </ion-row>
+            <ion-row align-items-center>  
+                <ion-col>
+                    <ion-label position="stacked">Latitude</ion-label>
+                    <ion-input placeholder="latitude" name="latitude" type="text" 
+                    [(ngModel)]="queue.lat" #latitude="ngModel" #latitudeField></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-label position="stacked">Longitude</ion-label>
+                    <ion-input placeholder="longitude" name="longitude" type="text" 
+                    [(ngModel)]="queue.longit" #latitude="ngModel" #longitudeField></ion-input>
+                </ion-col>
+                <ion-col>
+                  <a href="{{geolocLink}}" target="_blank" clear>
+                      <!--<ion-icon name="pin"></ion-icon>-->
+                      Show on Map
+                  </a>  
+                  <ion-button (click)="getGeo()" clear>
+                      Detect
+                  </ion-button>  
+                </ion-col>
+              </ion-row>  
+            <ion-row>
+                <ion-col>
+                  <ion-button (click)="save()"  >Save</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row align-items-center>
+              <ion-col >
+                  <!--<ion-label position="stacked">Queue URL:</ion-label>-->
+                  <!--<ion-textarea text-wrap type="text" readonly id="queueURL"
+                  [(ngModel)]="queueURLText" #queueURL="ngModel" #queueURLField
+                  href="{{queueURLText}}"></ion-textarea>       -->
+                  <a href="{{queueURLText}}" target="_blank">Queue URL</a>
+              </ion-col>
+              <ion-col size="auto">
+                <ion-button (click)="copy()" data-clipboard-target="#queueURL" id="cpyBtn">
+                  <ion-icon name="copy"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col size="auto">
+                  <ion-button (click)="share()">
+                    <ion-icon name="share"></ion-icon>
+                  </ion-button>
+              </ion-col>
+              </ion-row>  
+            <ion-row>
+              <ion-col>                    
+              </ion-col>
+            </ion-row>          
+            <ion-row>
+              <ion-col>
+                <qrcode [qrdata]="queueURLText" [size]="256" [level]="'M'"></qrcode>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>
+
+<ion-footer>
+    <ion-title>{{footer}}</ion-title>
+</ion-footer>
